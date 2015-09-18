@@ -15,10 +15,10 @@ Running the programs will create the folder "nltk_data" in C:/User directory, wh
 Containing Folders
 ==================
 
-!Note: Taggers are supposed to train on Daba HTML files (Bambara Reference Corpus).
+!Note: Corpusreader htmlreader.py is supposed to read files in Daba HTML format (Bambara Reference Corpus).
 
 Corpus
-- Should contain corpus files in Daba HTML format
+- Folder which has to contain the corpus files
 
 Models
 - folder empty, but will be used to store models to when CRFTaggers is trained
@@ -68,7 +68,7 @@ ensemblecombinationBrillWu_HtmlREGEX,py
 - saves result to files in Results folder
 
 htmlreaderALL.py
-- reader for html files 
+- reader for Daba HTML files 
 - it´s a modified xml reader of NLTK: nltk.corpus.reader.xmldocs; uses parts of HTMLReader of Kirill Maslinsky
 
 indivTaggers.py
