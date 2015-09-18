@@ -9,7 +9,7 @@ To run the programs, the following programs have to be installed:
 2. NLTK (http://www.nltk.org/install.html);
 3. CRFSuite https://pypi.python.org/pypi/python-crfsuite
 
-Running the programs will create the folder "nltk_data" in C:/User directory, where the corpus files will be automatically copied to.
+Running the programs will create the folder "nltk_data" in C:/User directory, where the corpus files in the folder "Corpus" will be automatically copied to.
 
 
 Containing Folders
