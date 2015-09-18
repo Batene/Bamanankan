@@ -43,6 +43,12 @@ bambara_tagging_htmlreaderALL.py
 - loads the corpus files and creates a reader needed to work with the sentences/words in the corpus
 - used by create_reader
 
+bamadaba.txt
+- the Bamadaba dictionary (http://cormand.huma-num.fr/bamadaba.html)
+
+bamadaba_non_tonal.txt
+- the Bamadaba dictionary (http://cormand.huma-num.fr/bamadaba.html), but without tones
+
 confusionmatrix.py
 - slightly modified version of confusionmatrix.py of NLTK
 - function was added so that switches (tagger tagged word with tag A instead of the right tag B) can be analyzed
