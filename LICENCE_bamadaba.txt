@@ -1,0 +1,6 @@
+The bamadaba dictionary bamadaba.txt, and its modified form bamadaba_non_tonal.txt are under the license of Creative Commons:
+
+https://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode
+
+The dictionary was made available by the Bambara Reference Corpus Team under:
+http://cormand.huma-num.fr/bamadaba.html
