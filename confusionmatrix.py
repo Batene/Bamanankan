@@ -7,7 +7,7 @@
 # For license information, see LICENSE_Apache.TXT
 
 
-#modified by Kathrin
+#slightly modified by Kathrin
 
 from __future__ import print_function, unicode_literals
 from nltk.probability import FreqDist
