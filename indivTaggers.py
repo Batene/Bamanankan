@@ -21,15 +21,12 @@ def indivDefault(bambara):
     return default
 
 def indivCRF(bambara, tone, tag):
-    crf = CRFTagger(training_opt={'max_iterations':100,'max_linesearch' : 10,'c1': 0.0001,'c2': 1.0})#beste training_opt für CRF
+    crf = CRFTagger(training_opt={'max_iterations':100,'max_linesearch' : 10,'c1': 0.0001,'c2': 1.0})#best training_opt für CRF
 # c1 and c2 according to suggestion on http://nbviewer.ipython.org/github/tpeng/python-crfsuite/blob/master/examples/CoNLL%202002.ipynb
     print("Training CRF Tagger...")
     crf.train(bambara.train_sents, "Models/model.indivCRF"+tone+tag+".tagger")
     print("CRF accuracy: ",crf.evaluate(bambara.test_sents))
     return crf
-#'c1': 1.0,'c2': 1e-3} --> 0.9518130983648225
-#'c1':0.001,'c2': 1.0 --> 0.9523002626450903
-#'c1':0.0001,'c2': 1.0})--> 0.9524061679234093
 
 def indivTnT(bambara, backoff):
     tnttagger = tnt.TnT(unk=backoff, Trained= True, N=100)
