@@ -46,10 +46,6 @@ hmmtagged = hmm.tag_sents([untag(i) for i in bambara.test_sents])
 hmm_acc = hmm.evaluate(bambara.test_sents)
 hmm_err = round((1 - (hmm_acc)),4)
 
-#load CRFTagger if exists
-##file = open("crfBW.pickle", "rb")
-##crf = pickle.load(file)
-##crf.set_model_file("model.indivCRFtonalPOS.tagger")
 crf = indivCRF(bambara, tone, tag)
 crftagged = crf.tag_sents([untag(i) for i in bambara.test_sents]) 
 crf_acc = crf.evaluate(bambara.test_sents)
@@ -102,15 +98,15 @@ def compareTagger(tag1, tag2,orgTaggedSents, tag1Sents, tag2Sents):
             if (tag1Sents[i]) == (orgTaggedSents[i]):
                 righttags.append(i)
         righttags = righttags[::-1]
-        for i in righttags: #pop the tagged words which were right in tag1Sents from all lists
+        for i in righttags: #pop the tagged words which were correct in tag1Sents from all lists
             orgTaggedSents.pop(i)
             tag1Sents.pop(i)
             tag2Sents.pop(i)
-        tag1OnlyErr = len(tag1Sents)#because in tag1Sents are now onli the wrongli tagged words
-        commonErr = tag1OnlyErr #at the beginning, asume, tagger2 has also wrongli tagged the words that tagger1 has
+        tag1OnlyErr = len(tag1Sents)#because in tag1Sents are now onli the incorrectly tagged words
+        commonErr = tag1OnlyErr #at the beginning, assume, tagger2 has also incorrectly tagged the words that tagger1 has
         for i in range(len(orgTaggedSents)):
             if tag2Sents[i] == orgTaggedSents[i]:
-                commonErr-=1 #if tagger2 has rightli tagged a word, that tagger1 as wronlgi tagged
+                commonErr-=1 #if tagger2 has tagged a word correctly, that tagger1 has tagged incorrectly
         result = round(((1-(commonErr/tag1OnlyErr))*100),2)
         resultfinal = str(result)
         if len(resultfinal)==3:
