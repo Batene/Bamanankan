@@ -186,7 +186,7 @@ class CRFTagger(TaggerI):
         
         # We need the list of sentences instead of the list generator for matching the input and output
 
-################ added #################################################
+################ added by Kathrin #########################################
         default = DefaultTagger('None')
         sents = default.tag_sents(sents)
 ###########################################################################
@@ -197,7 +197,7 @@ class CRFTagger(TaggerI):
                 
             if len(labels) != len(tokens):
                 raise Exception(' Predicted Length Not Matched, Expect Errors !')
-############### added ###################################################
+############### added by Kathrin ############################################
             tokens = [i[0] for i in tokens]
 #############################################################################
             tagged_sent = list(zip(tokens,labels))
