@@ -15,7 +15,7 @@ Running the programs will create the folder "nltk_data" in C:/User directory, wh
 Containing Folders
 ==================
 
-!Note: Taggers are supposed to train on the Bambara Reference Corpus Daba HTML files.
+!Note: Taggers are supposed to train on Daba HTML files (Bambara Reference Corpus).
 
 Corpus
 - Should contain corpus files in Daba HTML format
@@ -32,7 +32,7 @@ Containing Files
 ================
 
 analyzeContingency.py 
-- calculates percentage of words tagged i which are j in reality; saves result to a file in Results folder
+- calculates percentage of words tagged i which in reality are j; saves result to a file in Results folder
 - looks for the words which are responsible for these errors and save each error to a file in Results folder
 - saves confusionmatrix to Results folder
 
@@ -40,24 +40,24 @@ backoffCombi.py
 - combines taggers according to the backoff-chaining given in NLTK
 
 bambara_tagging_htmlreaderALL.py
-- load the corpus files and creates a reader needed to work with the sentences/words in the corpus
+- loads the corpus files and creates a reader needed to work with the sentences/words in the corpus
 - used by create_reader
 
 confusionmatrix.py
-- modified version of confusionmatrix.py of NLTK
-- function was added so that switches (tagger tagged word with tag A instead of tag B) can be analyzed
+- slightly modified version of confusionmatrix.py of NLTK
+- function was added so that switches (tagger tagged word with tag A instead of the right tag B) can be analyzed
 
 create_reader.py
 - uses bambara_tagging_htmlreaderALL to create a reader (with htmlreaderALL.py) needed to work with the corpus files
 
 crf.py
-- modified crf of NLTK (features were added; Tag-features are possible now)
+- modified crf of NLTK (features added)
 
 CrossValidation.py
 - implementation of a 9-fold crossvalidation
 
 disambiguation.py
-- removes ambiguous tags from loaded tagged sentences (e.g. n/v)
+- removes sentences containing words tagged ambiguously (e.g. n/v)
 
 ensemblecombinationBrillWu_Html.py
 - calculates complementarity and disagreement of the taggers CRF, TnT, HMM and either Unigram or a backoff Tagger (Bigram+Affix+Dictionary+Regexp+DefaultTagger) according to Brill & Wu (1998)
@@ -72,7 +72,7 @@ htmlreaderALL.py
 - it´s a modified xml reader of NLTK: nltk.corpus.reader.xmldocs; uses parts of HTMLReader of Kirill Maslinsky
 
 indivTaggers.py
-- train individual taggers more easily 
+- trains individual taggers more easily 
 - also used by other programs
 
 patterns[_non]_tonal[_SA].py
@@ -82,10 +82,11 @@ regextagger_[non_]tonal[_SA].py
 - RegexpTagger for each form of training (tonal or nontonal, with or without Affixes)
 
 toolboxreaderRun.py
-- contains function to get the alternative words to one entry in the dictionary
+- contains function to get the alternative words to an entry in the dictionary
+- use to create the DictionaryTagger
 
 Voting.py
-- implementation of several voting strategies for ensemble combination
+- implementation of several voting strategies of the ensemble combination
 
 
 (for further information on the files, look into the files header)
